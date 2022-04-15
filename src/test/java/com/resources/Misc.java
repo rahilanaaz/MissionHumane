@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map.Entry;
 
 import org.openqa.selenium.By;
@@ -68,8 +69,8 @@ public class Misc {
 		
 		hashmap.put(hospital, list);
 		System.out.println(hashmap);
-		
-		if(i==rowCount-1 && loadBtn.isDisplayed()) {
+	    List<WebElement> Btn = driver.findElements(By.xpath("//*[@id=\"root\"]//div/div[2]/div[3]/div/button"));
+		if(i==rowCount-1 && Btn.size()>0) {
 			
 			try {
 				
@@ -88,7 +89,7 @@ public class Misc {
 		
 		}
 		
-		
+		/*
 		String filePath = "C:\\Users\\R\\eclipse-workspace\\MissionHumane\\ExcelData\\punedata.xlsx";
 		ExcelUtil util = new ExcelUtil(filePath);
 		util.setCellData("Pune_Data", 0, 0, "Hospital Name");
@@ -110,7 +111,7 @@ public class Misc {
 			util.setCellData("Pune_data", i, 3, value.get(2));
 			util.setCellData("Pune_data", i, 4, value.get(3));
 			util.setCellData("Pune_data", i, 5, value.get(4));
-			
+		*/	
 		
 		}
 		
@@ -119,4 +120,4 @@ public class Misc {
 		
 	}
 
-}
+
